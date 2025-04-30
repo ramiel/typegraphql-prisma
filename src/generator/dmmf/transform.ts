@@ -185,15 +185,15 @@ function transformInputType(dmmfDocument: DmmfDocument) {
             : typeof modelField.isOmitted.input === "boolean"
               ? modelField.isOmitted.input
               : (modelField.isOmitted.input.includes(InputOmitSetting.Create) &&
-                  inputType.name.includes("Create")) ||
-                (modelField.isOmitted.input.includes(InputOmitSetting.Update) &&
-                  inputType.name.includes("Update")) ||
-                (modelField.isOmitted.input.includes(InputOmitSetting.Where) &&
-                  inputType.name.includes("Where")) ||
-                (modelField.isOmitted.input.includes(
-                  InputOmitSetting.OrderBy,
-                ) &&
-                  inputType.name.includes("OrderBy"));
+                inputType.name.includes("Create")) ||
+              (modelField.isOmitted.input.includes(InputOmitSetting.Update) &&
+                inputType.name.includes("Update")) ||
+              (modelField.isOmitted.input.includes(InputOmitSetting.Where) &&
+                inputType.name.includes("Where")) ||
+              (modelField.isOmitted.input.includes(
+                InputOmitSetting.OrderBy,
+              ) &&
+                inputType.name.includes("OrderBy"));
           return {
             ...field,
             selectedInputType,
@@ -302,6 +302,18 @@ export function getMappedOutputTypeName(
         .replace("AndReturnOutputType", ""),
     );
     return `CreateManyAndReturn${modelTypeName}`;
+  }
+
+  if (
+    outputTypeName.startsWith("UpdateMany") &&
+    outputTypeName.endsWith("AndReturnOutputType")
+  ) {
+    const modelTypeName = dmmfDocument.getModelTypeName(
+      outputTypeName
+        .replace("UpdateMany", "")
+        .replace("AndReturnOutputType", ""),
+    );
+    return `UpdateManyAndReturn${modelTypeName}`;
   }
 
   if (dmmfDocument.isModelName(outputTypeName)) {

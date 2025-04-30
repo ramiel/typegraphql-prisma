@@ -1,4 +1,4 @@
-import { DMMF } from "./dmmf/types";
+import type { DMMF } from "./dmmf/types";
 
 // export type BaseKeys = keyof Pick<DMMF.ModelMapping, "model" | "plural">;
 // export const baseKeys: BaseKeys[] = ["model", "plural"];
@@ -22,6 +22,7 @@ export const supportedMutationActions = [
   "createOne",
   "createMany",
   "createManyAndReturn",
+  "updateManyAndReturn",
   "deleteOne",
   "updateOne",
   "deleteMany",

@@ -1,4 +1,4 @@
-import { InputOmitSetting } from "../config";
+import type { InputOmitSetting } from "../config";
 
 export type ReadonlyDeep<O> = {
   +readonly [K in keyof O]: ReadonlyDeep<O[K]>;
@@ -245,6 +245,7 @@ export namespace DMMF {
     createOne = "createOne",
     createMany = "createMany",
     createManyAndReturn = "createManyAndReturn",
+    updateManyAndReturn = "updateManyAndReturn",
     updateOne = "updateOne",
     updateMany = "updateMany",
     upsertOne = "upsertOne",
