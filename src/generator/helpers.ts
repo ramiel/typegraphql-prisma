@@ -181,6 +181,7 @@ function getInputKeywordPhrasePosition(inputTypeName: string) {
     "Where",
     "ListRelationFilter",
     "RelationFilter",
+    "ScalarRelationFilter",
     "Filter",
   ]
     .map(inputKeyword => inputTypeName.search(inputKeyword))

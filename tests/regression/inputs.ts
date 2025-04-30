@@ -369,7 +369,7 @@ describe("inputs", () => {
       "/resolvers/inputs/FirstModelOrderByWithRelationInput.ts",
     );
     const firstModelRelationFilterTSFile = await readGeneratedFile(
-      "/resolvers/inputs/FirstModelRelationFilter.ts",
+      "/resolvers/inputs/FirstModelScalarRelationFilter.ts",
     );
     const secondModelWhereInputTSFile = await readGeneratedFile(
       "/resolvers/inputs/SecondModelWhereInput.ts",
@@ -995,6 +995,7 @@ describe("inputs", () => {
         await readGeneratedFile(
           "/resolvers/inputs/RenamedFirstModelOrderByWithRelationInput.ts",
         );
+      // This is not generated anymore
       const renamedFirstModelRelationFilterTSFile = await readGeneratedFile(
         "/resolvers/inputs/RenamedFirstModelRelationFilter.ts",
       );
@@ -1026,9 +1027,9 @@ describe("inputs", () => {
       expect(renamedFirstModelOrderByWithRelationInputTSFile).toMatchSnapshot(
         "RenamedFirstModelOrderByWithRelationInput",
       );
-      expect(renamedFirstModelRelationFilterTSFile).toMatchSnapshot(
-        "RenamedFirstModelRelationFilter",
-      );
+      // expect(renamedFirstModelRelationFilterTSFile).toMatchSnapshot(
+      //   "RenamedFirstModelRelationFilter",
+      // );
       expect(renamedSecondModelWhereInputTSFile).toMatchSnapshot(
         "RenamedSecondModelWhereInput",
       );

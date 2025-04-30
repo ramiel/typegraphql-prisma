@@ -1824,6 +1824,452 @@ export { StringWithAggregatesFilter } from \\"./StringWithAggregatesFilter\\";
 "
 `;
 
+exports[`inputs should properly generate input type classes for filtering models by one to many relation fields: FirstModelOrderByWithRelationInput 1`] = `
+"import * as TypeGraphQL from \\"type-graphql\\";
+import * as GraphQLScalars from \\"graphql-scalars\\";
+import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
+import { DecimalJSScalar } from \\"../../scalars\\";
+import { SecondModelOrderByRelationAggregateInput } from \\"../inputs/SecondModelOrderByRelationAggregateInput\\";
+import { SortOrder } from \\"../../enums/SortOrder\\";
+
+@TypeGraphQL.InputType(\\"FirstModelOrderByWithRelationInput\\", {})
+export class FirstModelOrderByWithRelationInput {
+  @TypeGraphQL.Field(_type => SortOrder, {
+    nullable: true
+  })
+  idField?: \\"asc\\" | \\"desc\\" | undefined;
+
+  @TypeGraphQL.Field(_type => SortOrder, {
+    nullable: true
+  })
+  uniqueStringField?: \\"asc\\" | \\"desc\\" | undefined;
+
+  @TypeGraphQL.Field(_type => SortOrder, {
+    nullable: true
+  })
+  floatField?: \\"asc\\" | \\"desc\\" | undefined;
+
+  @TypeGraphQL.Field(_type => SecondModelOrderByRelationAggregateInput, {
+    nullable: true
+  })
+  secondModelsField?: SecondModelOrderByRelationAggregateInput | undefined;
+}
+"
+`;
+
+exports[`inputs should properly generate input type classes for filtering models by one to many relation fields: FirstModelRelationFilter 1`] = `
+"import * as TypeGraphQL from \\"type-graphql\\";
+import * as GraphQLScalars from \\"graphql-scalars\\";
+import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
+import { DecimalJSScalar } from \\"../../scalars\\";
+import { FirstModelWhereInput } from \\"../inputs/FirstModelWhereInput\\";
+
+@TypeGraphQL.InputType(\\"FirstModelScalarRelationFilter\\", {})
+export class FirstModelScalarRelationFilter {
+  @TypeGraphQL.Field(_type => FirstModelWhereInput, {
+    nullable: true
+  })
+  is?: FirstModelWhereInput | undefined;
+
+  @TypeGraphQL.Field(_type => FirstModelWhereInput, {
+    nullable: true
+  })
+  isNot?: FirstModelWhereInput | undefined;
+}
+"
+`;
+
+exports[`inputs should properly generate input type classes for filtering models by one to many relation fields: FirstModelWhereInput 1`] = `
+"import * as TypeGraphQL from \\"type-graphql\\";
+import * as GraphQLScalars from \\"graphql-scalars\\";
+import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
+import { DecimalJSScalar } from \\"../../scalars\\";
+import { FloatFilter } from \\"../inputs/FloatFilter\\";
+import { IntFilter } from \\"../inputs/IntFilter\\";
+import { SecondModelListRelationFilter } from \\"../inputs/SecondModelListRelationFilter\\";
+import { StringFilter } from \\"../inputs/StringFilter\\";
+
+@TypeGraphQL.InputType(\\"FirstModelWhereInput\\", {})
+export class FirstModelWhereInput {
+  @TypeGraphQL.Field(_type => [FirstModelWhereInput], {
+    nullable: true
+  })
+  AND?: FirstModelWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => [FirstModelWhereInput], {
+    nullable: true
+  })
+  OR?: FirstModelWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => [FirstModelWhereInput], {
+    nullable: true
+  })
+  NOT?: FirstModelWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => IntFilter, {
+    nullable: true
+  })
+  idField?: IntFilter | undefined;
+
+  @TypeGraphQL.Field(_type => StringFilter, {
+    nullable: true
+  })
+  uniqueStringField?: StringFilter | undefined;
+
+  @TypeGraphQL.Field(_type => FloatFilter, {
+    nullable: true
+  })
+  floatField?: FloatFilter | undefined;
+
+  @TypeGraphQL.Field(_type => SecondModelListRelationFilter, {
+    nullable: true
+  })
+  secondModelsField?: SecondModelListRelationFilter | undefined;
+}
+"
+`;
+
+exports[`inputs should properly generate input type classes for filtering models by one to many relation fields: FirstModelWhereUniqueInput 1`] = `
+"import * as TypeGraphQL from \\"type-graphql\\";
+import * as GraphQLScalars from \\"graphql-scalars\\";
+import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
+import { DecimalJSScalar } from \\"../../scalars\\";
+import { FirstModelWhereInput } from \\"../inputs/FirstModelWhereInput\\";
+import { FloatFilter } from \\"../inputs/FloatFilter\\";
+import { SecondModelListRelationFilter } from \\"../inputs/SecondModelListRelationFilter\\";
+
+@TypeGraphQL.InputType(\\"FirstModelWhereUniqueInput\\", {})
+export class FirstModelWhereUniqueInput {
+  @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+    nullable: true
+  })
+  idField?: number | undefined;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  uniqueStringField?: string | undefined;
+
+  @TypeGraphQL.Field(_type => [FirstModelWhereInput], {
+    nullable: true
+  })
+  AND?: FirstModelWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => [FirstModelWhereInput], {
+    nullable: true
+  })
+  OR?: FirstModelWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => [FirstModelWhereInput], {
+    nullable: true
+  })
+  NOT?: FirstModelWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => FloatFilter, {
+    nullable: true
+  })
+  floatField?: FloatFilter | undefined;
+
+  @TypeGraphQL.Field(_type => SecondModelListRelationFilter, {
+    nullable: true
+  })
+  secondModelsField?: SecondModelListRelationFilter | undefined;
+}
+"
+`;
+
+exports[`inputs should properly generate input type classes for filtering models by one to many relation fields: SecondModelListRelationFilter 1`] = `
+"import * as TypeGraphQL from \\"type-graphql\\";
+import * as GraphQLScalars from \\"graphql-scalars\\";
+import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
+import { DecimalJSScalar } from \\"../../scalars\\";
+import { SecondModelWhereInput } from \\"../inputs/SecondModelWhereInput\\";
+
+@TypeGraphQL.InputType(\\"SecondModelListRelationFilter\\", {})
+export class SecondModelListRelationFilter {
+  @TypeGraphQL.Field(_type => SecondModelWhereInput, {
+    nullable: true
+  })
+  every?: SecondModelWhereInput | undefined;
+
+  @TypeGraphQL.Field(_type => SecondModelWhereInput, {
+    nullable: true
+  })
+  some?: SecondModelWhereInput | undefined;
+
+  @TypeGraphQL.Field(_type => SecondModelWhereInput, {
+    nullable: true
+  })
+  none?: SecondModelWhereInput | undefined;
+}
+"
+`;
+
+exports[`inputs should properly generate input type classes for filtering models by one to many relation fields: SecondModelOrderByWithRelationInput 1`] = `
+"import * as TypeGraphQL from \\"type-graphql\\";
+import * as GraphQLScalars from \\"graphql-scalars\\";
+import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
+import { DecimalJSScalar } from \\"../../scalars\\";
+import { FirstModelOrderByWithRelationInput } from \\"../inputs/FirstModelOrderByWithRelationInput\\";
+import { SortOrder } from \\"../../enums/SortOrder\\";
+
+@TypeGraphQL.InputType(\\"SecondModelOrderByWithRelationInput\\", {})
+export class SecondModelOrderByWithRelationInput {
+  @TypeGraphQL.Field(_type => SortOrder, {
+    nullable: true
+  })
+  idField?: \\"asc\\" | \\"desc\\" | undefined;
+
+  @TypeGraphQL.Field(_type => SortOrder, {
+    nullable: true
+  })
+  uniqueStringField?: \\"asc\\" | \\"desc\\" | undefined;
+
+  @TypeGraphQL.Field(_type => SortOrder, {
+    nullable: true
+  })
+  floatField?: \\"asc\\" | \\"desc\\" | undefined;
+
+  @TypeGraphQL.Field(_type => SortOrder, {
+    nullable: true
+  })
+  firstModelFieldId?: \\"asc\\" | \\"desc\\" | undefined;
+
+  @TypeGraphQL.Field(_type => FirstModelOrderByWithRelationInput, {
+    nullable: true
+  })
+  firstModelField?: FirstModelOrderByWithRelationInput | undefined;
+}
+"
+`;
+
+exports[`inputs should properly generate input type classes for filtering models by one to many relation fields: SecondModelScalarWhereInput 1`] = `
+"import * as TypeGraphQL from \\"type-graphql\\";
+import * as GraphQLScalars from \\"graphql-scalars\\";
+import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
+import { DecimalJSScalar } from \\"../../scalars\\";
+import { FloatFilter } from \\"../inputs/FloatFilter\\";
+import { IntFilter } from \\"../inputs/IntFilter\\";
+import { StringFilter } from \\"../inputs/StringFilter\\";
+
+@TypeGraphQL.InputType(\\"SecondModelScalarWhereInput\\", {})
+export class SecondModelScalarWhereInput {
+  @TypeGraphQL.Field(_type => [SecondModelScalarWhereInput], {
+    nullable: true
+  })
+  AND?: SecondModelScalarWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => [SecondModelScalarWhereInput], {
+    nullable: true
+  })
+  OR?: SecondModelScalarWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => [SecondModelScalarWhereInput], {
+    nullable: true
+  })
+  NOT?: SecondModelScalarWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => IntFilter, {
+    nullable: true
+  })
+  idField?: IntFilter | undefined;
+
+  @TypeGraphQL.Field(_type => StringFilter, {
+    nullable: true
+  })
+  uniqueStringField?: StringFilter | undefined;
+
+  @TypeGraphQL.Field(_type => FloatFilter, {
+    nullable: true
+  })
+  floatField?: FloatFilter | undefined;
+
+  @TypeGraphQL.Field(_type => IntFilter, {
+    nullable: true
+  })
+  firstModelFieldId?: IntFilter | undefined;
+}
+"
+`;
+
+exports[`inputs should properly generate input type classes for filtering models by one to many relation fields: SecondModelWhereInput 1`] = `
+"import * as TypeGraphQL from \\"type-graphql\\";
+import * as GraphQLScalars from \\"graphql-scalars\\";
+import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
+import { DecimalJSScalar } from \\"../../scalars\\";
+import { FirstModelScalarRelationFilter } from \\"../inputs/FirstModelScalarRelationFilter\\";
+import { FloatFilter } from \\"../inputs/FloatFilter\\";
+import { IntFilter } from \\"../inputs/IntFilter\\";
+import { StringFilter } from \\"../inputs/StringFilter\\";
+
+@TypeGraphQL.InputType(\\"SecondModelWhereInput\\", {})
+export class SecondModelWhereInput {
+  @TypeGraphQL.Field(_type => [SecondModelWhereInput], {
+    nullable: true
+  })
+  AND?: SecondModelWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => [SecondModelWhereInput], {
+    nullable: true
+  })
+  OR?: SecondModelWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => [SecondModelWhereInput], {
+    nullable: true
+  })
+  NOT?: SecondModelWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => IntFilter, {
+    nullable: true
+  })
+  idField?: IntFilter | undefined;
+
+  @TypeGraphQL.Field(_type => StringFilter, {
+    nullable: true
+  })
+  uniqueStringField?: StringFilter | undefined;
+
+  @TypeGraphQL.Field(_type => FloatFilter, {
+    nullable: true
+  })
+  floatField?: FloatFilter | undefined;
+
+  @TypeGraphQL.Field(_type => IntFilter, {
+    nullable: true
+  })
+  firstModelFieldId?: IntFilter | undefined;
+
+  @TypeGraphQL.Field(_type => FirstModelScalarRelationFilter, {
+    nullable: true
+  })
+  firstModelField?: FirstModelScalarRelationFilter | undefined;
+}
+"
+`;
+
+exports[`inputs should properly generate input type classes for filtering models by one to many relation fields: SecondModelWhereUniqueInput 1`] = `
+"import * as TypeGraphQL from \\"type-graphql\\";
+import * as GraphQLScalars from \\"graphql-scalars\\";
+import { Prisma } from \\"../../../../helpers/prisma-client-mock\\";
+import { DecimalJSScalar } from \\"../../scalars\\";
+import { FirstModelScalarRelationFilter } from \\"../inputs/FirstModelScalarRelationFilter\\";
+import { FloatFilter } from \\"../inputs/FloatFilter\\";
+import { IntFilter } from \\"../inputs/IntFilter\\";
+import { SecondModelWhereInput } from \\"../inputs/SecondModelWhereInput\\";
+
+@TypeGraphQL.InputType(\\"SecondModelWhereUniqueInput\\", {})
+export class SecondModelWhereUniqueInput {
+  @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+    nullable: true
+  })
+  idField?: number | undefined;
+
+  @TypeGraphQL.Field(_type => String, {
+    nullable: true
+  })
+  uniqueStringField?: string | undefined;
+
+  @TypeGraphQL.Field(_type => [SecondModelWhereInput], {
+    nullable: true
+  })
+  AND?: SecondModelWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => [SecondModelWhereInput], {
+    nullable: true
+  })
+  OR?: SecondModelWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => [SecondModelWhereInput], {
+    nullable: true
+  })
+  NOT?: SecondModelWhereInput[] | undefined;
+
+  @TypeGraphQL.Field(_type => FloatFilter, {
+    nullable: true
+  })
+  floatField?: FloatFilter | undefined;
+
+  @TypeGraphQL.Field(_type => IntFilter, {
+    nullable: true
+  })
+  firstModelFieldId?: IntFilter | undefined;
+
+  @TypeGraphQL.Field(_type => FirstModelScalarRelationFilter, {
+    nullable: true
+  })
+  firstModelField?: FirstModelScalarRelationFilter | undefined;
+}
+"
+`;
+
+exports[`inputs should properly generate input type classes for filtering models by one to many relation fields: index 1`] = `
+"export { FirstModelAvgOrderByAggregateInput } from \\"./FirstModelAvgOrderByAggregateInput\\";
+export { FirstModelCountOrderByAggregateInput } from \\"./FirstModelCountOrderByAggregateInput\\";
+export { FirstModelCreateInput } from \\"./FirstModelCreateInput\\";
+export { FirstModelCreateManyInput } from \\"./FirstModelCreateManyInput\\";
+export { FirstModelCreateNestedOneWithoutSecondModelsFieldInput } from \\"./FirstModelCreateNestedOneWithoutSecondModelsFieldInput\\";
+export { FirstModelCreateOrConnectWithoutSecondModelsFieldInput } from \\"./FirstModelCreateOrConnectWithoutSecondModelsFieldInput\\";
+export { FirstModelCreateWithoutSecondModelsFieldInput } from \\"./FirstModelCreateWithoutSecondModelsFieldInput\\";
+export { FirstModelMaxOrderByAggregateInput } from \\"./FirstModelMaxOrderByAggregateInput\\";
+export { FirstModelMinOrderByAggregateInput } from \\"./FirstModelMinOrderByAggregateInput\\";
+export { FirstModelOrderByWithAggregationInput } from \\"./FirstModelOrderByWithAggregationInput\\";
+export { FirstModelOrderByWithRelationInput } from \\"./FirstModelOrderByWithRelationInput\\";
+export { FirstModelScalarRelationFilter } from \\"./FirstModelScalarRelationFilter\\";
+export { FirstModelScalarWhereWithAggregatesInput } from \\"./FirstModelScalarWhereWithAggregatesInput\\";
+export { FirstModelSumOrderByAggregateInput } from \\"./FirstModelSumOrderByAggregateInput\\";
+export { FirstModelUpdateInput } from \\"./FirstModelUpdateInput\\";
+export { FirstModelUpdateManyMutationInput } from \\"./FirstModelUpdateManyMutationInput\\";
+export { FirstModelUpdateOneRequiredWithoutSecondModelsFieldNestedInput } from \\"./FirstModelUpdateOneRequiredWithoutSecondModelsFieldNestedInput\\";
+export { FirstModelUpdateToOneWithWhereWithoutSecondModelsFieldInput } from \\"./FirstModelUpdateToOneWithWhereWithoutSecondModelsFieldInput\\";
+export { FirstModelUpdateWithoutSecondModelsFieldInput } from \\"./FirstModelUpdateWithoutSecondModelsFieldInput\\";
+export { FirstModelUpsertWithoutSecondModelsFieldInput } from \\"./FirstModelUpsertWithoutSecondModelsFieldInput\\";
+export { FirstModelWhereInput } from \\"./FirstModelWhereInput\\";
+export { FirstModelWhereUniqueInput } from \\"./FirstModelWhereUniqueInput\\";
+export { FloatFieldUpdateOperationsInput } from \\"./FloatFieldUpdateOperationsInput\\";
+export { FloatFilter } from \\"./FloatFilter\\";
+export { FloatWithAggregatesFilter } from \\"./FloatWithAggregatesFilter\\";
+export { IntFieldUpdateOperationsInput } from \\"./IntFieldUpdateOperationsInput\\";
+export { IntFilter } from \\"./IntFilter\\";
+export { IntWithAggregatesFilter } from \\"./IntWithAggregatesFilter\\";
+export { NestedFloatFilter } from \\"./NestedFloatFilter\\";
+export { NestedFloatWithAggregatesFilter } from \\"./NestedFloatWithAggregatesFilter\\";
+export { NestedIntFilter } from \\"./NestedIntFilter\\";
+export { NestedIntWithAggregatesFilter } from \\"./NestedIntWithAggregatesFilter\\";
+export { NestedStringFilter } from \\"./NestedStringFilter\\";
+export { NestedStringWithAggregatesFilter } from \\"./NestedStringWithAggregatesFilter\\";
+export { SecondModelAvgOrderByAggregateInput } from \\"./SecondModelAvgOrderByAggregateInput\\";
+export { SecondModelCountOrderByAggregateInput } from \\"./SecondModelCountOrderByAggregateInput\\";
+export { SecondModelCreateInput } from \\"./SecondModelCreateInput\\";
+export { SecondModelCreateManyFirstModelFieldInput } from \\"./SecondModelCreateManyFirstModelFieldInput\\";
+export { SecondModelCreateManyFirstModelFieldInputEnvelope } from \\"./SecondModelCreateManyFirstModelFieldInputEnvelope\\";
+export { SecondModelCreateManyInput } from \\"./SecondModelCreateManyInput\\";
+export { SecondModelCreateNestedManyWithoutFirstModelFieldInput } from \\"./SecondModelCreateNestedManyWithoutFirstModelFieldInput\\";
+export { SecondModelCreateOrConnectWithoutFirstModelFieldInput } from \\"./SecondModelCreateOrConnectWithoutFirstModelFieldInput\\";
+export { SecondModelCreateWithoutFirstModelFieldInput } from \\"./SecondModelCreateWithoutFirstModelFieldInput\\";
+export { SecondModelListRelationFilter } from \\"./SecondModelListRelationFilter\\";
+export { SecondModelMaxOrderByAggregateInput } from \\"./SecondModelMaxOrderByAggregateInput\\";
+export { SecondModelMinOrderByAggregateInput } from \\"./SecondModelMinOrderByAggregateInput\\";
+export { SecondModelOrderByRelationAggregateInput } from \\"./SecondModelOrderByRelationAggregateInput\\";
+export { SecondModelOrderByWithAggregationInput } from \\"./SecondModelOrderByWithAggregationInput\\";
+export { SecondModelOrderByWithRelationInput } from \\"./SecondModelOrderByWithRelationInput\\";
+export { SecondModelScalarWhereInput } from \\"./SecondModelScalarWhereInput\\";
+export { SecondModelScalarWhereWithAggregatesInput } from \\"./SecondModelScalarWhereWithAggregatesInput\\";
+export { SecondModelSumOrderByAggregateInput } from \\"./SecondModelSumOrderByAggregateInput\\";
+export { SecondModelUpdateInput } from \\"./SecondModelUpdateInput\\";
+export { SecondModelUpdateManyMutationInput } from \\"./SecondModelUpdateManyMutationInput\\";
+export { SecondModelUpdateManyWithWhereWithoutFirstModelFieldInput } from \\"./SecondModelUpdateManyWithWhereWithoutFirstModelFieldInput\\";
+export { SecondModelUpdateManyWithoutFirstModelFieldNestedInput } from \\"./SecondModelUpdateManyWithoutFirstModelFieldNestedInput\\";
+export { SecondModelUpdateWithWhereUniqueWithoutFirstModelFieldInput } from \\"./SecondModelUpdateWithWhereUniqueWithoutFirstModelFieldInput\\";
+export { SecondModelUpdateWithoutFirstModelFieldInput } from \\"./SecondModelUpdateWithoutFirstModelFieldInput\\";
+export { SecondModelUpsertWithWhereUniqueWithoutFirstModelFieldInput } from \\"./SecondModelUpsertWithWhereUniqueWithoutFirstModelFieldInput\\";
+export { SecondModelWhereInput } from \\"./SecondModelWhereInput\\";
+export { SecondModelWhereUniqueInput } from \\"./SecondModelWhereUniqueInput\\";
+export { StringFieldUpdateOperationsInput } from \\"./StringFieldUpdateOperationsInput\\";
+export { StringFilter } from \\"./StringFilter\\";
+export { StringWithAggregatesFilter } from \\"./StringWithAggregatesFilter\\";
+"
+`;
+
 exports[`inputs should properly generate input type classes for filtering scalar fields: BoolFilter 1`] = `
 "import * as TypeGraphQL from \\"type-graphql\\";
 import * as GraphQLScalars from \\"graphql-scalars\\";
